@@ -10,16 +10,21 @@ router.post('/register', (req,res) => {
         password : req.body.password
     };
     fs.readFile('./users.txt', (err, data) => {
-            if (err)
-                throw err;
-            let usersData = JSON.parse(data);   
-            if (validUser(usersData, newUser.email)) {
-                insertNewUser(newUser);
-                res.send(`User ${newUser.email} successfuly registered`);
+            if (err) {
+                console.log('Error reading file', err);
             } else {
-                res.send('This email address is already taken by another user. Please enter a valid email address.'); 
-            }
-            
+                try { 
+                    let usersData = JSON.parse(data);   
+                    if (validUser(usersData, newUser.email)) {
+                        insertNewUser(usersData, newUser);
+                        res.send(`User ${newUser.email} successfuly registered`);
+                    } else {
+                        res.send('This email address is already taken by another user. Please enter a valid email address.'); 
+                    }
+                } catch (err) {
+                    console.log('Error parsing JSON', err);
+                }   
+            } 
     });
     
     //console.log(user);
@@ -34,13 +39,14 @@ const validUser = (usersData, email) => {
     return true;
 };
 
-const insertNewUser = (newUser) => {
- 
-    fs.writeFile('./users.txt', newUser , (err) => {
+const insertNewUser = (usersData, newUser) => {
+    usersData[usersData.length] = newUser;
+    console.log(usersData);
+    fs.writeFile('./users.txt', JSON.stringify(usersData, null, 2), (err) => {
         if (err)
-            throw (err);
+            console.log('Error writing file', err);
     });
-}
+};
 
 // router.post('/login', (req,res) => {
 

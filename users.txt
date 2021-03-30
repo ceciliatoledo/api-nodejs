@@ -1,0 +1,14 @@
+[
+    {
+        "email" : "cecitoledo97@gmail.com",
+        "firstName" : "Cecilia",
+        "lastName" : "Toledo",
+        "password" : "p4ssw0rd1"
+    },
+    {
+        "email" : "santicalabrese@gmail.com",
+        "firstName" : "Santiago",
+        "lastName" : "Calabrese",
+        "password" : "p4ssw0rd2"
+    }
+]

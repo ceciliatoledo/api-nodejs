@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 fs = require('fs');
 
 //Register new user
@@ -11,6 +12,7 @@ router.post('/register', (req,res) => {
                 try {
                     let usersData = JSON.parse(data);
                     if (findUser(usersData, req.body.email) == null) {
+                        //Password encryption with bcrypt
                         const hashedPassword = await bcrypt.hash(req.body.password, 10);
                         const newUser = {
                             email: req.body.email,
@@ -30,6 +32,7 @@ router.post('/register', (req,res) => {
         });
 });
 
+//User Login 
 router.post('/login', (req,res) => {
     fs.readFile('./users.txt', async (err, data) => {
         if (err) {
@@ -39,16 +42,18 @@ router.post('/login', (req,res) => {
                 let usersData = JSON.parse(data);
                 let user = findUser(usersData, req.body.email);
                 if (user == null){
-                    res.status(400).send('User not found');
+                    res.status(400).send('Email not found');
                 } else {
                     try{
                         if (await bcrypt.compare(req.body.password, user.password)) {
-                            res.send('Successful login');
+                            //Create and assign web token (for more security, I would have used a user PPID as the payload, instead of the email that is sensitive information)
+                            const token = jwt.sign({email : user.email}, process.env.TOKEN_SECRET);
+                            res.header('auth-token', token).send('Logged in successfully');
                         } else {
-                            res.send('Not allowed');
+                            res.status(400).send('Not allowed');
                         }
                     } catch {
-                        res.status(500).send('Error bycrypt compare');
+                        res.status(500).send('Error bcrypt compare');
                     }
                 }
             } catch (err) {

@@ -16,5 +16,11 @@
     "firstName": "Cecilia",
     "lastName": "Toledo",
     "password": "contraseña"
+  },
+  {
+    "email": "hola@gmail.com",
+    "firstName": "Hola",
+    "lastName": "Chau",
+    "password": "$2b$10$WTDQrL4X0wOX2b5vW4YeqerNtjB729xZMO4rx/SdGo1BYKIkqRQ36"
   }
 ]

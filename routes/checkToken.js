@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 
+//This method checks for the authorization token for access permission 
 const checkToken = (req, res, next) => {
     const token = req.headers['auth-token'];
     if (!token) 

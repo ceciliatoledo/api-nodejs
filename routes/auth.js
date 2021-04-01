@@ -3,7 +3,11 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 fs = require('fs');
 
-//Register new user
+/* Register new user
+*  Given an email, first name, second name and password, 
+*  it registers a new user into the system, verifying the email is not taken
+*  and encrypting the password
+*/
 router.post('/register', (req,res) => {
     fs.readFile('./users.txt', async (err, data) => {
             if (err) {
@@ -32,7 +36,11 @@ router.post('/register', (req,res) => {
         });
 });
 
-//User Login 
+/* User Login 
+*  Given an email and a password, it logs in a user, 
+*  verifying the user is registered, and returning
+*  an 'auth-token' created with json web token
+*/
 router.post('/login', (req,res) => {
     fs.readFile('./users.txt', async (err, data) => {
         if (err) {
@@ -50,7 +58,7 @@ router.post('/login', (req,res) => {
                             const token = jwt.sign({email : user.email}, process.env.TOKEN_SECRET);
                             res.header('auth-token', token).send('Logged in successfully');
                         } else {
-                            res.status(400).send('Not allowed');
+                            res.status(400).send('The password is incorrect. Not allowed');
                         }
                     } catch {
                         res.status(500).send('Error bcrypt compare');
@@ -65,10 +73,13 @@ router.post('/login', (req,res) => {
 
 
 //Utils
+
+//Searches for a user by email
 const findUser = (usersData, email) => {
     return usersData.find(user => user.email == email);
 };
 
+//Inserts new user data into users.txt
 const insertNewUser = (usersData, newUser) => {
     usersData[usersData.length] = newUser;
     fs.writeFile('./users.txt', JSON.stringify(usersData, null, 2), (err) => {

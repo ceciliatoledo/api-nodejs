@@ -1,6 +1,6 @@
 [
   {
-    "email": "cecitoledo97@gmail.com",
+    "email": "marti@mail.com",
     "favourites": [
       {
         "adult": false,
@@ -20,143 +20,57 @@
         "video": false,
         "vote_average": 5.6,
         "vote_count": 4,
-        "suggestionScore": 11
-      },
-      {
-        "adult": false,
-        "backdrop_path": "/8g5PiV6q9Ev85FRGo4B6R6oMofE.jpg",
-        "genre_ids": [
-          99
-        ],
-        "id": 653758,
-        "original_language": "en",
-        "original_title": "The Reason I Jump",
-        "overview": "Filmmaker Jerry Rothwell examines the lives of five young people who live with autism spectrum disorder.",
-        "popularity": 7.934,
-        "poster_path": "/hqvze6LNRPZLwaXkBWel5zjmHPb.jpg",
-        "release_date": "2020-01-23",
-        "title": "The Reason I Jump",
-        "video": false,
-        "vote_average": 9,
-        "vote_count": 2,
-        "suggestionScore": 14
-      },
-      {
-        "adult": false,
-        "backdrop_path": "/hWa0pFOHTnNMl5kxHTFtltF8Yhm.jpg",
-        "genre_ids": [
-          18,
-          35,
-          10749
-        ],
-        "id": 13968,
-        "original_language": "en",
-        "original_title": "Jump In!",
-        "overview": "Story revolves around a young boxer, Izzy Daniels, who trains to follow in his father's footsteps by winning the Golden Glove. When his friend, Mary, however, asks him to substitute for a team member in a Double Dutch tournament, the young man discovers a hidden passion for jump roping",
-        "popularity": 9.998,
-        "poster_path": "/ghTY0nF9vX8dYshWOVjPUsPjQ0j.jpg",
-        "release_date": "2007-04-27",
-        "title": "Jump In!",
-        "video": false,
-        "vote_average": 6.3,
-        "vote_count": 288,
-        "suggestionScore": 19
+        "suggestionScore": 11,
+        "addedAt": "2021-04-01"
       }
     ]
   },
   {
-    "email": "santicalabrese@gmail.com",
+    "email": "ceci@mail.com",
     "favourites": [
       {
         "adult": false,
-        "backdrop_path": "/hWa0pFOHTnNMl5kxHTFtltF8Yhm.jpg",
+        "backdrop_path": "/6TPZSJ06OEXeelx1U1VIAt0j9Ry.jpg",
         "genre_ids": [
-          18,
-          35,
-          10749
+          28,
+          80,
+          53
         ],
-        "id": 13968,
-        "original_language": "en",
-        "original_title": "Jump In!",
-        "overview": "Story revolves around a young boxer, Izzy Daniels, who trains to follow in his father's footsteps by winning the Golden Glove. When his friend, Mary, however, asks him to substitute for a team member in a Double Dutch tournament, the young man discovers a hidden passion for jump roping",
-        "popularity": 9.998,
-        "poster_path": "/ghTY0nF9vX8dYshWOVjPUsPjQ0j.jpg",
-        "release_date": "2007-04-27",
-        "title": "Jump In!",
+        "id": 587996,
+        "original_language": "es",
+        "original_title": "Bajocero",
+        "overview": "When a prisoner transfer van is attacked, the cop in charge must fight those inside and outside while dealing with a silent foe: the icy temperatures.",
+        "popularity": 1418.339,
+        "poster_path": "/dWSnsAGTfc8U27bWsy2RfwZs0Bs.jpg",
+        "release_date": "2021-01-29",
+        "title": "Below Zero",
         "video": false,
-        "vote_average": 6.3,
-        "vote_count": 288,
-        "suggestionScore": 19
-      }
-    ]
-  },
-  {
-    "email": "hola@gmail.com",
-    "favourites": [
-      {
-        "adult": false,
-        "backdrop_path": "/hWa0pFOHTnNMl5kxHTFtltF8Yhm.jpg",
-        "genre_ids": [
-          18,
-          35,
-          10749
-        ],
-        "id": 13968,
-        "original_language": "en",
-        "original_title": "Jump In!",
-        "overview": "Story revolves around a young boxer, Izzy Daniels, who trains to follow in his father's footsteps by winning the Golden Glove. When his friend, Mary, however, asks him to substitute for a team member in a Double Dutch tournament, the young man discovers a hidden passion for jump roping",
-        "popularity": 9.998,
-        "poster_path": "/ghTY0nF9vX8dYshWOVjPUsPjQ0j.jpg",
-        "release_date": "2007-04-27",
-        "title": "Jump In!",
-        "video": false,
-        "vote_average": 6.3,
-        "vote_count": 288,
-        "suggestionScore": 19,
+        "vote_average": 6.5,
+        "vote_count": 489,
+        "suggestionScore": 14,
         "addedAt": "2021-04-01"
       },
       {
         "adult": false,
-        "backdrop_path": "/hWa0pFOHTnNMl5kxHTFtltF8Yhm.jpg",
+        "backdrop_path": "/fRrpOILyXuWaWLmqF7kXeMVwITQ.jpg",
         "genre_ids": [
-          18,
-          35,
-          10749
+          27,
+          53,
+          12,
+          9648
         ],
-        "id": 1111,
+        "id": 522444,
         "original_language": "en",
-        "original_title": "Jump In!",
-        "overview": "Story revolves around a young boxer, Izzy Daniels, who trains to follow in his father's footsteps by winning the Golden Glove. When his friend, Mary, however, asks him to substitute for a team member in a Double Dutch tournament, the young man discovers a hidden passion for jump roping",
-        "popularity": 9.998,
-        "poster_path": "/ghTY0nF9vX8dYshWOVjPUsPjQ0j.jpg",
-        "release_date": "2007-04-27",
-        "title": "Jump In!",
+        "original_title": "Black Water: Abyss",
+        "overview": "An adventure-loving couple convince their friends to explore a remote, uncharted cave system in the forests of Northern Australia. With a tropical storm approaching, they abseil into the mouth of the cave, but when the caves start to flood, tensions rise as oxygen levels fall and the friends find themselves trapped. Unknown to them, the storm has also brought in a pack of dangerous and hungry crocodiles.",
+        "popularity": 942.429,
+        "poster_path": "/95S6PinQIvVe4uJAd82a2iGZ0rA.jpg",
+        "release_date": "2020-07-09",
+        "title": "Black Water: Abyss",
         "video": false,
-        "vote_average": 6.3,
-        "vote_count": 288,
-        "suggestionScore": 19,
-        "addedAt": "2021-04-01"
-      },
-      {
-        "adult": false,
-        "backdrop_path": "/hWa0pFOHTnNMl5kxHTFtltF8Yhm.jpg",
-        "genre_ids": [
-          18,
-          35,
-          10749
-        ],
-        "id": 123,
-        "original_language": "en",
-        "original_title": "Jump In!",
-        "overview": "Story revolves around a young boxer, Izzy Daniels, who trains to follow in his father's footsteps by winning the Golden Glove. When his friend, Mary, however, asks him to substitute for a team member in a Double Dutch tournament, the young man discovers a hidden passion for jump roping",
-        "popularity": 9.998,
-        "poster_path": "/ghTY0nF9vX8dYshWOVjPUsPjQ0j.jpg",
-        "release_date": "2007-04-27",
-        "title": "Jump In!",
-        "video": false,
-        "vote_average": 6.3,
-        "vote_count": 288,
-        "suggestionScore": 19,
+        "vote_average": 5,
+        "vote_count": 174,
+        "suggestionScore": 25,
         "addedAt": "2021-04-01"
       }
     ]

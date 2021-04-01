@@ -1,26 +1,14 @@
 [
   {
-    "email": "cecitoledo97@gmail.com",
+    "email": "ceci@mail.com",
     "firstName": "Cecilia",
     "lastName": "Toledo",
-    "password": "p4ssw0rd1"
+    "password": "$2b$10$AZ3gpuA.uNvYKXI.NKL6wOWQVSc52F8IuDQTZkpXZ/trKyfkjNhu2"
   },
   {
-    "email": "santicalabrese@gmail.com",
-    "firstName": "Santiago",
-    "lastName": "Calabrese",
-    "password": "p4ssw0rd2"
-  },
-  {
-    "email": "cecitoledo1997@gmail.com",
-    "firstName": "Cecilia",
-    "lastName": "Toledo",
-    "password": "contraseña"
-  },
-  {
-    "email": "hola@gmail.com",
-    "firstName": "Hola",
-    "lastName": "Chau",
-    "password": "$2b$10$WTDQrL4X0wOX2b5vW4YeqerNtjB729xZMO4rx/SdGo1BYKIkqRQ36"
+    "email": "marti@mail.com",
+    "firstName": "Martina",
+    "lastName": "Font",
+    "password": "$2b$10$mGDOzVfGoCNrpM9lNNSGGO8JvzE5GLn.WyVqfOnpDRD02Ugf0Y31e"
   }
 ]

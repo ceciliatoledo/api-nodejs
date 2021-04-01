@@ -36,10 +36,15 @@ router.post('/add-movie-to-favourites', checkToken, (req,res) => {
                 let userFavourites = findFavourites(favouritesData, req.user.email);
                 if (userFavourites == null){
                     insertNewUserAndFavourites(favouritesData, req.user.email, req.body);
+                    res.send('Successfully created favourites list and added movie');
                 } else {
-                    insertNewFavourite(favouritesData, req.user.email, req.body);
+                    if (checkForMovie(userFavourites, req.body)) {
+                        insertNewFavourite(favouritesData, req.user.email, req.body);
+                        res.send('Successfully added movie to your favourites list!')
+                    } else {
+                        res.send('The movie you selected was already in your favourites');
+                    }
                 }
-                res.status(201).send('Successfully added movie to your favourites list!')
             } catch (err) {
                 console.log('Error parsing data', err);
             }
@@ -108,13 +113,21 @@ const insertNewUserAndFavourites = (favouritesData, email, movie) => {
 // The user had previousley added favourite movies to the list
 const insertNewFavourite = (favouritesData, email, movie) => {
     let userFavourites = findFavourites(favouritesData, email);
-    // TODO: CHECK IF THE MOVIE IS ALREADY IN THE LIST
     movie.addedAt = formattedDate();
     userFavourites.favourites[userFavourites.favourites.length] = movie;
     fs.writeFile('./favourites.txt', JSON.stringify(favouritesData, null, 2), (err) => {
         if (err)
             console.log('Error writing file', err);
     })
+}
+
+const checkForMovie = (userFavourites, movie) => {
+    for (i in userFavourites.favourites){
+        if (userFavourites.favourites[i].id == movie.id){
+            return false;
+        } 
+    }
+    return true;
 }
 
 const formattedDate = () =>{

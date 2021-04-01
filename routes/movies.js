@@ -3,45 +3,33 @@ const request = require('request');
 const checkToken = require('./checkToken');
 
 
-//Get all movies
-router.get('/get-movies', checkToken, (req,res) => {
-    const URL_GET_KEYWORD_IDS = 'https://api.themoviedb.org/3/search/keyword?api_key='+process.env.MOVIE_DB_API_KEY+'&query='+req.body.keyword+'&page=1';
-    const getIds = getKeywordIds(URL_GET_KEYWORD_IDS, ids => {
-        const URL_GET_MOVIES_BY_KEYWORD =   'https://api.themoviedb.org/3/keyword/'+ids.toString()+'/movies?api_key='+process.env.MOVIE_DB_API_KEY+'&language=en-US&include_adult=false';
-        const getMovies = getMoviesByKeyword(URL_GET_MOVIES_BY_KEYWORD, body =>{
-            res.send({keyword: req.body.keyword, body});
-        });
+/* Get movies by keyword
+*  Given a keyword or query, it searches for every movie related to it,
+*  gives them an arbitrary suggestionScore between 0 and 99, and returns them
+*  ordered by said score. 
+*/
+router.get('/get-movies-by-keyword', checkToken, (req,res) => {
+    const URL = 'https://api.themoviedb.org/3/search/movie?api_key='+process.env.MOVIE_DB_API_KEY+'&language=en-US&query='+encodeURI(req.body.keyword)+'&page=1&include_adult=false';
+    const getMovies = getMoviesByKeyword(URL, body => {  
+        for (movie in body.results) {
+            body.results[movie].suggestionScore = getRandomArbitrary(0,99);
+        }
+        res.send({keyword: req.body.keyword, body});
     });
 });
 
-
-
-const getKeywordIds = (reqURL, callback) => {
-    request(reqURL, {json : true }, (err, res, body) => {
+const getMoviesByKeyword = (URL, callback) => {
+    request(URL, {json : true }, (err, res, body) => {
         if (err) 
             return callback(err);
         else {
-            let ids = []
-            for (i in body.results){
-                ids.push(body.results[i].id);
-            }
-            return callback(ids);
+            return callback(body);
         }
     });
 };
 
-const getMoviesByKeyword = (reqURL, callback) => {
-    request(reqURL, {json : true }, (err, res, body) => {
-        if (err) 
-            return callback(err);
-        else {
-            // let ids = []
-            // for (i in body.results){
-            //     ids.push(body.results[i].id);
-            // }
-            return callback(body);
-        }
-    });
+const getRandomArbitrary = (min, max) => {
+    return Math.floor(Math.random() * (max - min) + min);
 };
 
 module.exports = router;

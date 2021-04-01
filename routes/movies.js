@@ -26,7 +26,7 @@ router.get('/get-movies-by-keyword', checkToken, (req,res) => {
     });
 });
 
-router.post('/add-movie-to-favourites', checkToken, (req,res) =>{
+router.post('/add-movie-to-favourites', checkToken, (req,res) => {
     fs.readFile('./favourites.txt', (err, data) => {
         if (err){
             console.log('Error reading file', err);
@@ -45,6 +45,32 @@ router.post('/add-movie-to-favourites', checkToken, (req,res) =>{
             }
         }
             
+    });
+});
+
+router.get('/get-my-favourite-movies', checkToken, (req,res) => {
+    fs.readFile('./favourites.txt', (err, data) => {
+        if (err) {
+            console.log('Error reading file', err);
+        } else {
+            try {
+                let favouritesData = JSON.parse(data);
+                let userFavourites = findFavourites(favouritesData, req.user.email);
+                for (movie in userFavourites.favourites) {
+                    userFavourites.favourites[movie].suggestionForTodayScore = getRandomArbitrary(0,99);
+                }
+                userFavourites.favourites.sort(function (a, b) {
+                    if (a.suggestionForTodayScore <= b.suggestionForTodayScore){
+                        return -1;
+                    } else {
+                        return 1;
+                    } 
+                })
+                res.send(userFavourites);
+            } catch (err) {
+                console.log('Error parsing data', err);
+            }
+        }
     });
 });
 

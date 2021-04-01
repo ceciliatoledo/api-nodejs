@@ -14,6 +14,13 @@ router.get('/get-movies-by-keyword', checkToken, (req,res) => {
         for (movie in body.results) {
             body.results[movie].suggestionScore = getRandomArbitrary(0,99);
         }
+        body.results.sort(function (a, b) {
+            if (a.suggestionScore <= b.suggestionScore){
+                return -1;
+            } else {
+                return 1;
+            } 
+        })
         res.send({keyword: req.body.keyword, body});
     });
 });
